@@ -1,0 +1,455 @@
+@charset 'utf-8';
+
+.inner {
+    /* w118r+m0-a+bg#ff5 */
+    width: 118rem;
+    margin: 0 auto;
+    /* background: #ff5; */
+}
+
+#header {
+    background: #fff;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+#header nav {
+    height: 12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: block;
+    width: 16.4rem;
+    height: 3.2rem;
+    background: url(../img/logo.svg) no-repeat 0 0 / contain;
+}
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--gnb-color);
+}
+
+.btn-menu {
+    display: none;
+}
+
+.visual {
+    height: 46rem;
+    background: #f5f5f5 url(../img/visual.jpg) no-repeat 100% 0 / contain; /* 100% 0 = 오른쪽으로 돌린다는 의미 */
+    position: relative;
+}
+
+.visual-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* 자기 크기의 절반만큼 위로 올린거. 그래서 이제 중앙이 되었다. */
+    /* left: 370px; */
+    left: 19.2708vw; /* vw: 뷰포트를 기준으로 한 퍼센트 */
+    /* background: #5f5; */
+}
+
+.visual-title h2 {
+    font-weight: 700;
+    font-size: 4.8rem; /* 모바일:3rem 가변:4.68vw PC:4.8rem */
+    font-size: clamp(3rem, 4.68vw, 4.8rem); /* clamp(함수): 최솟값, 중간값(추천값), 최댓값 */
+    color: var(--dark-color);
+    line-height: 1.2;
+    text-transform: uppercase; /* ttu: text 대문자로 */
+}
+
+.visual-title h2 strong {
+    color: var(--main-color);
+}
+
+.visual-title p {
+    margin-top: 2.4rem;
+    font-size: 2rem;
+}
+
+.visual-title .cta {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 4.8rem;
+    color: #fff;
+    background: var(--main-color);
+    font-weight: 700;
+    margin-top: 3.2rem;
+}
+
+.business {
+    padding: 9rem 0 12rem;
+    padding: clamp(4rem, 4.6875vw, 9rem) 0 clamp(10rem, 6.25vw, 12rem);
+    /* 90 / 1920 * 100 */
+}
+
+.business-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.business-list li {
+    border: 1px solid var(--black40);
+    background: #fff;
+    /* width: 28rem; 가로 크기가 있으면 가로 크기를 우선하므로 없앰. */
+    /* height: 30.2rem; */
+
+    flex: 1 1 22%; /* fx1-1-22p: 늘어날 수 있고, 줄어들 수 있고, 기본 점유 공간. */
+    aspect-ratio: 1/1.079;
+
+    padding: 2.8rem 3.2rem;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.business-list li dl dt {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--sub-color);
+}
+
+.business-list li dl dd {
+    margin-top: 1.2rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.sec-title {
+    font-weight: 500;
+    font-size: 3.2rem;
+    color: var(--main-color);
+    text-transform: uppercase; /* 대문자 */
+}
+
+.sec-title + p {
+    font-weight: 500;
+    font-size: 2rem;
+    margin-top: 0.4rem;
+    color: var(--dark-color);
+}
+
+.work-list {
+    display: flex;
+    flex-wrap: wrap; /* fxww: 줄바꿈 */
+    margin-top: 2.8rem;
+}
+
+.work-list li {
+    /* border: 1px solid #000; */
+    background: no-repeat 0 0 / cover;
+
+    flex: 1 1 48%;
+    aspect-ratio: 1/0.44; /* 종횡비. 이 비율대로 늘어남 */
+}
+
+.work-list li:nth-child(1) {
+    background-image: url(../img/work-pic1.jpg);
+}
+
+.work-list li:nth-child(2) {
+    background-image: url(../img/work-pic2.jpg);
+}
+
+.work-list li:nth-child(3) {
+    background-image: url(../img/work-pic3.jpg);
+}
+
+.work-list li:nth-child(4) {
+    background-image: url(../img/work-pic4.jpg);
+}
+
+.work-info {
+    background: var(--black40);
+    height: 100%;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column; /* fxdc */
+    justify-content: center;
+    align-items: center;
+}
+
+.work-info strong {
+    font-weight: 700;
+    font-size: 2.4rem;
+    font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+}
+
+.work-info span {
+    font-weight: 500;
+    /* font-size: 2.4rem; */
+    font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+    margin-top: 0.6rem;
+}
+
+.news {
+    /* padding: 12rem 0; */
+    padding: clamp(10rem, 6.25vw, 12rem) 0;
+}
+
+.news-item {
+    display: flex;
+}
+
+.news-con {
+    /* border: 1px solid #000; */
+    padding: 1.1rem 6rem 0 0; /* p1.1r-6r-0-0 */
+
+    /* flex: 1 1 50%; fx1-1-50p */
+    width: 45.7627%; /* 100-(.news-pic의 값) 54.2373 = (news-con의 가로 크기) */
+}
+
+.news-con h4 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--dark-color);
+    margin-top: 1.8rem;
+}
+
+.news-con p {
+    margin-top: 1.8rem;
+    line-height: 1.7; /* 줄간격 */
+}
+
+.news-pic {
+    /* width: 64rem; */
+    width: 54.2373%;
+}
+
+.column h4 {
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--dark-color);
+    margin-top: 1.8rem;
+}
+
+.column p {
+    margin-top: 1.8rem;
+    line-height: 1.7;
+
+    column-count: 2;
+    /* column-gap: 100px; */
+}
+
+.column strong {
+    display: block;
+    text-align: right; /* tar */
+    margin-top: 1.8rem;
+    font-weight: 500;
+}
+
+#footer {
+    margin-top: 12rem;
+    background: var(--gnb-color);
+    color: var(--white60);
+    padding: 5.2rem 0;
+}
+
+#footer .inner {
+    display: flex;
+    flex-direction: row-reverse; /* fxdrr: 배치 순서 바꾸기 (좌>우) -> (우>좌) */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foot-logo {
+    width: 16.4rem;
+    height: 3.2rem;
+    background: url(../img/foot-logo.svg) no-repeat 0 0 / contain;
+}
+
+.foot-con {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* :first-child, nth-child (1)*/
+
+.foot-con p:nth-of-type(1) {
+    font-family: "Noto Sans KR";
+    /* color: #f00; */
+}
+
+.foot-con p + p {
+    margin-top: 0.8rem;
+}
+
+/* 모바일 메뉴 */
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu {
+    position: fixed; /* posf: viewport를 기준으로 함 */
+    top: 0;
+    left: 100%;
+    z-index: 100;
+    width: 100%;
+    height: 100vh; /* viewport의 세로 크기 */
+    padding-top: 11rem;
+    background: var(--main-color);
+    color: #fff;
+
+    transition: 0.4s cubic-bezier(0.56, 0.09, 0, 0.93);
+
+    display: flex;
+    flex-direction: column; /* fxdc */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.mobile-logo {
+    display: block;
+    width: 16.4rem;
+    height: 3.2rem;
+    background: url(../img/logo-w.svg) no-repeat 0 0;
+}
+
+.mobile-gnb {
+    margin-top: 6.5rem;
+}
+
+.mobile-gnb li a {
+    font-weight: 700;
+    font-size: 2rem;
+    display: block;
+    padding: 1.6rem 0;
+    text-align: center;
+}
+
+.btn-close {
+    position: absolute;
+    top: 2.2rem;
+    right: 2rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    background: url(../img/ico-close.svg) no-repeat 50%;
+}
+
+/* 1. 첫번째 미디어쿼리는 .inner의 크기로 잡아라 */
+@media (max-width: 1300px) {
+    .inner {
+        width: 90%;
+    }
+
+    .visual {
+        background-position: 50% 0; /* bgp */
+        background-size: cover; /* bgz */
+    }
+}
+
+@media (max-width: 1200px) {
+    .business-list {
+        flex-wrap: wrap; /* 줄바꿈 가능 */
+    }
+    .business-list li {
+        /* flex: 1 1 48%; */
+        flex-basis: 48%; /* fxb48p */
+        aspect-ratio: 1/0.5907;
+    }
+}
+
+/* 태블릿 PC */
+@media (max-width: 1024px) {
+    #header nav {
+        height: 10rem;
+    }
+
+    .inner {
+        width: 96.8rem;
+        width: 94.5313%;
+    }
+
+    .gnb {
+        display: none;
+    }
+
+    .btn-menu {
+        display: block;
+        width: 4.8rem;
+        height: 4.8rem;
+        background: url(../img/ico-menu.svg) no-repeat 50%;
+    }
+
+    .visual {
+        height: 64rem;
+    }
+
+    .visual-title {
+        /* left: 100px; */
+        left: 10.7422vw;
+    }
+
+    .news-con {
+        /* width: 49.4rem; */
+        width: 51.0331%;
+        padding-right: 2rem;
+    }
+
+    .news-pic {
+        /* width: 47.4rem; */
+        width: 48.9669%;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+    .inner {
+        width: 89.7436%;
+    }
+
+    .visual {
+        /* height: 48rem; */
+        /* h100vh: vh = viewport의 세로크기, calc():을 사용해서 값을 계산시킴, 10rem(상단 영역의 세로 값) */
+        height: calc(100vh - 10rem);
+    }
+
+    .visual-title {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 35rem; */
+        width: 89.7436%;
+        text-align: center;
+    }
+
+    .visual-title br {
+        display: none;
+    }
+
+    .work-list li {
+        flex-basis: 100%; /* fxb100p */
+    }
+
+    .news-item {
+        flex-direction: column; /* fxdc */
+    }
+
+    .news-con {
+        width: 100%;
+        padding: 0 0 2.4rem 0;
+    }
+
+    .news-pic {
+        width: 100%;
+        aspect-ratio: 1/1.097;
+    }
+
+    .column p {
+        column-count: 1;
+    }
+
+    #footer .inner {
+        flex-direction: column; /* fxdc: 메인 축이 column으로 바뀜 */
+        gap: 2.4rem;
+        text-align: center;
+    }
+}

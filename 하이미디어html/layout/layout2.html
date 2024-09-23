@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>layout 2</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <style>
+            header {
+                height: 100px;
+                background: red;
+            }
+
+            footer {
+                height: 100px;
+                background: #555;
+            }
+
+            .inner {
+                /* w1200+m0-a+bg */
+                width: 1200px;
+                height: 100%; /* h100p */
+                margin: 0 auto;
+                background: rgba(255, 255, 0, 0.5);
+            }
+
+            .slider {
+                /* width: 1200px; */
+                min-height: 300px; /* mih300 */
+                margin: 0 auto;
+                background: orange;
+            }
+
+            .contents {
+                /* width: 1200px; */
+                min-height: 200px;
+                margin: 0 auto;
+                background: yellow;
+
+                display: flex;
+            }
+
+            .board {
+                width: 34%; /* w34p */
+                background: green;
+            }
+
+            .banner {
+                width: 33%;
+                background: blue;
+            }
+
+            .link {
+                width: 33%;
+                background: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- header+main+footer -->
+        <!-- ctrl+shift+A누른 후 header(텍스트) 더블 클릭 후 .inner 작성 -->
+        <header>
+            <div class="inner">header</div>
+        </header>
+
+        <main>
+            <div class="inner">
+                <!-- .slider+.contents -->
+                <div class="slider"></div>
+                <div class="contents">
+                    <!-- .board+.banner+.link -->
+                    <div class="board">board</div>
+                    <div class="banner">banner</div>
+                    <div class="link">link</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="inner">footer</div>
+        </footer>
+    </body>
+</html>

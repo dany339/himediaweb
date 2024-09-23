@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block vs inline</title>
+    <style>
+        a, strong {
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: block;
+        }
+
+        h1, p{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            /* display: inline; */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 모든 요소(tag)는 블록레벨요소와 인라인레벨요소로 나뉜다.-->
+    <h1>h1</h1><h2>h2</h2>
+    <p>p</p>
+    <img src="" alt="img"><a href="">a</a>
+    <strong>strong</strong>
+    <!--ul>li*4{list item$}-->
+    <ul>
+        <li>list item1</li>
+        <li>list item2</li>
+        <li>list item3</li>
+        <li>list item4</li>
+    </ul>
+    <!--dl>dt+dd-->
+    <dl>
+        <dt>dt</dt>
+        <dd>dd</dd>
+    </dl>
+    <div>div</div>
+
+    <!-- header+main+footer -->
+    <!-- 블럭요소만 크기와 여백을 가질 수 있다 -->
+    <header>header</header>
+    <main>main</main>
+    <footer>footer</footer>
+
+    <em>em</em>
+    <span>span</span>
+    <!-- ctrl + / (주석), Ait + Shift + 아래화살표(복제) -->
+    
+</body>
+</html>

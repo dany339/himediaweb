@@ -1,0 +1,304 @@
+@charset 'utf-8';
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+    --main-color: #12562f;
+    --title-color: #111;
+    --bg-color: #f3f6f6;
+    --bg-color-dark: #232f28;
+    --text-color: #666;
+    --white60: rgba(255, 255, 255, 0.6);
+    --black20: rgba(0, 0, 0, 0.2);
+}
+
+/* 마우스로 드레그 할 때 표시되는 색상이 바뀜!!!! */
+::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+html {
+    /* 계산을 편하게 하기 위해 단위를 조정해줌 */
+    font-size: 100%; /* fz100p = 16px */
+    font-size: 62.5%; /* fz62.5p = 10px = 1rem */
+    scroll-behavior: smooth; /* scb */
+}
+
+body {
+    font: 1.6rem/1.5 Pretendard, sans-serif;
+    color: var(--text-color);
+    text-transform: capitalize; /* ttc: 단어의 첫글자를 대문자로 */
+    word-break: keep-all; /* wbka: 어절 단위 줄바꿈 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover; /* 비율 깨지는 거 방지 */
+}
+
+hr,
+.hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.inner {
+    /* w134.3r+m0-a+bg */
+    width: 134.3rem;
+    margin: 0 auto;
+    /* background: rgba(255, 255, 0, 0.3); */
+}
+
+#header nav {
+    height: 10rem; /* h10r: 뒤에 r을 붙이면 rem의 값으로 들어감 */
+    display: flex;
+    justify-content: space-between; /* jcsb */
+    align-items: center;
+}
+
+.logo a {
+    display: block;
+    /* w17.9r+h5r */
+    width: 17.9rem;
+    height: 5rem;
+    background: url(../img/logo.svg) no-repeat 0 0 / contain;
+}
+
+.gnb {
+    display: flex;
+    margin-left: auto; /* mla */
+    margin-right: 5rem; /* mr5r: a가 30의 여백을 갖고 있어서 80의 간격을 만들기 위해 5r을 줌. */
+}
+
+.gnb li a {
+    display: block;
+    /* p1r-3r: 저 -3r이 마이너스로 들어간 거 수정해줘야함 */
+    padding: 1rem 3rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--title-color);
+    position: relative;
+}
+
+.gnb li a:hover {
+    color: var(--main-color);
+}
+
+.gnb li a::after {
+    content: ""; /* ct: 이거 없으면 안 나옴 */
+    display: block;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%); /* trftx */
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%; /* bdrs */
+    background: var(--main-color);
+    opacity: 0; /* op0: 오퍼시티 0(오퍼시티의 값은 0.1 = 10이다.) */
+    transition: cubic-bezier(0.1, 0.63, 0.46, 1.18) 0.4s;
+}
+
+.gnb li a:hover::after {
+    top: 0;
+    opacity: 1;
+}
+
+.util-menu a {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background: url(../img/ico-login.svg) no-repeat 50%;
+    border: 1px solid var(--main-color);
+    border-radius: 50%; /* bora */
+}
+
+#footer {
+    padding: 7.7rem 0;
+    background: var(--bg-color-dark);
+    color: var(--white60);
+}
+
+.foot-logo {
+    width: 17.9rem;
+    height: 5rem;
+    background: url(../img/foot-logo.svg) no-repeat 0 0;
+}
+
+address {
+    margin-top: 2.8rem;
+}
+
+address dl {
+    display: flex;
+    flex-wrap: wrap; /* fxww: 줄바꿈 */
+    gap: 0.8rem 1.6rem;
+    width: 28.5rem;
+    font-size: 1.5rem;
+}
+
+address dl dt {
+    font-weight: 700;
+}
+
+address dl dd {
+    /* fx1-1-74p */
+    flex: 1 1 73%;
+}
+
+address > p {
+    /* > 자식 선택자. 자손이 아니라 자식임! */
+    margin-top: 3.2rem;
+    font-weight: 700;
+}
+
+.btn-top {
+    position: fixed; /* posf: 고정 */
+    /* b22.7r+r29r+w5.4r+h5.4r+bg */
+    bottom: 20.7rem;
+    right: 29rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    background: #000 url(../img/ico-top.svg) no-repeat 50%;
+    border-radius: 50%; /* bdrs50p: 테두리 둥글게 */
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.25); /* bxsh: 그림자 효과 */
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.btn-top.active {
+    opacity: 1;
+    bottom: 22.7rem;
+}
+
+/* 애니메이션 정의 */
+@keyframes revealAni {
+    /* revealAni: 나타나게 하는 거 */
+    0% {
+        /* 얘도 패딩처럼 값이 같으면 축약해서 써도 됨. 원래는 (50% 20% 50% 20%) */
+        clip-path: inset(50% 20%);
+    }
+
+    100% {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes fadeScale {
+    0% {
+        /* 기존의 translate의 값을 적어줘함. 나중에 적은 값이 적용되므로. */
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeText {
+    0% {
+        /* transform: translateY(50px); trfty */
+        opacity: 0;
+        filter: blur(10px);
+        /* letter-spacing: 50px; lts50 */
+    }
+    100% {
+        /* transform: translateY(0); trfty */
+        opacity: 1;
+        filter: blur(0);
+        /* letter-spacing: 0; lts0 */
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* 버튼에 대한 정의 */
+.btn-wrap {
+    /* text-align: center; 인라인 가운데로 보내기 -> 블록인 조상에게 tac */
+    display: flex;
+    justify-content: center;
+    gap: 3.6rem;
+    margin-top: 10rem;
+}
+
+.btn {
+    min-width: 19.5rem;
+    height: 5.1rem;
+    border: 1px solid var(--title-color);
+    background: #fff;
+    padding: 0 4.8rem;
+    /* a(인라인)이기 때문에 블럭요소로 만듦 / inline-flex: 인라인의 특징도 갖는 플렉스 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--title-color);
+    transition: 0.4s;
+}
+
+.btn::after {
+    content: "";
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../img/ico-arr.svg) no-repeat 50%;
+}
+
+.btn:hover {
+    /* bxsh */
+    /* box-shadow: inset(안쪽 그림자 효과) hoff voff blur #000; */
+    box-shadow: 5px 6px 0px var(--main-color);
+}
+
+input[type="checkbox"] {
+    display: none; /* dn */
+}
+
+input[type="checkbox"] + label {
+    /* background: #5f5; */
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+input[type="checkbox"] + label::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #000;
+}
+
+input[type="checkbox"]:checked + label::before {
+    border-color: var(--main-color);
+    background: var(--main-color) url(../img/ico-check.svg) no-repeat 50% / 60%;
+}

@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+.inner {
+    width: 50%;
+    margin: 0 auto;
+}
+
+body {
+    background: #fff;
+}
+
+header {
+    height: 70px;
+    background: #f44;
+}
+
+.visual-wrap {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+/* 메인 비주얼 등장 */
+.visual {
+    height: 100%;
+    background: url(https://kasikornbank.com/th/News/PublishingImages/BLACKPINK_MainKV_L.jpg)
+        0 0 / cover no-repeat;
+
+    /* 2. 동작하라고 말하기 */
+    animation: visualAni 1s;
+}
+
+/* 1. 비주얼 등장의 동작 만들기 */
+/* @keyframes: css의 애니메이션 정의 */
+@keyframes visualAni {
+    /* 타임라인 정의 */
+    0% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 비주얼 텍스트 등장 */
+.visual-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.visual-text h2 {
+    font-size: 40px;
+    animation: slideUp 1s 1.3s; /* 1s(앞) 지속시간, 1s(뒤)딜레이 시간 */
+    animation-fill-mode: both; /* none: 기본값, forwards, vackwards, both(이거 써): 앞에꺼 둘 다 쓸게 */
+
+    /* animation: slideUp 1s 1.3s both; <-로 써도 됨 */
+}
+
+.visual-text p {
+    font-size: 20px;
+    animation: slideUp 1s 1.7s both;
+}
+
+/* 텍스트 동작 만들기 */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* 양수가 아래(-) 방향 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 50px 0;
+}
+
+section p {
+    margin: 30px 0;
+}
+
+/* 지수 */
+.jisu {
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url(https://i.ytimg.com/vi/3vkVT5SaQ-g/hqdefault.jpg) 50% 50% /
+        cover no-repeat;
+
+    /* 2. 동작하라고 말하기 */
+    animation: visualAni 3s;
+
+    /*	2. 지수에게 빙빙 돌라고 말하자*/
+    animation-name: rotateAni;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-timing-function: linear; /* ease: 기본값 */
+    animation-iteration-count: infinite; /* 애니메이션 반복 획수 / infinte: 무한반복 */
+    animation-direction: normal; /* normal: 기본값 / alternate: 번갈아서 */
+    animation-play-state: running;
+
+    animation-name: rotateAni 4s linear infinite; /* <-위 문장의 내용을 한 문장으로 축약 속성으로 정의한 것 */
+}
+
+.jisu:hover {
+    animation-play-state: paused;
+}
+
+/* 1. 지수 돌리기 */
+@keyframes rotateAni {
+    100% {
+        transform: translateY(-50%) rotate(360deg); /* trfr / 위에서 transform을 정의해줬기 때문에, 그 값도 같이 가져와줘야 함 */
+    }
+}
+
+/* 블랙핑크 */
+.blackpink {
+    position: relative;
+    width: 500px;
+}
+
+.blackpink::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+
+    animation: showBox 0.4s 2s both;
+}
+
+.blackpink.action::after {
+    /* 2. 보이게하기 명령 부여 */
+}
+
+/* 1. 보이게 하기 = 가렸던 핑크박스를 사라지게 */
+@keyframes showBox {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+footer {
+    height: 50px;
+    background: #444;
+    line-height: 50px;
+    color: #ddd;
+    text-align: center;
+}

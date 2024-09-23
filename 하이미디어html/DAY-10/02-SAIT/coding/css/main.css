@@ -1,0 +1,384 @@
+@charset 'utf-8';
+
+.inner {
+    width: 1180px;
+    margin: 0 auto;
+    /* background: #ff5; */
+}
+#header {
+    /* height: 104px; */
+    background: #fff;
+}
+
+#header nav {
+    height: 104px;
+    /* background: tomato; */
+    display: flex;
+    justify-content: space-between; /* jcsb */
+    align-items: center; /* aic: 세로기준 중앙정렬 */
+}
+
+.logo a {
+    display: flex;
+    width: 225px;
+    height: 50px;
+    background: url(../images/logo.png) no-repeat 0 50%; /* x축 방향으로 0, y축 방향으로 50%에 사진이 위치하도록 */
+}
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    /* p10-20+bd */
+    padding: 0 20px;
+    /* border: 1px solid #000; */
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--title-color);
+}
+
+.gnb li a b {
+    /* 배경색을 칠해도 기존 a에 여백이 있어서 그 부분을 침범하지 못함. */
+    /*그래서 기존 a에 있던 상하 패딩 값을 여기로 옮긴 거임. */
+    display: flex;
+    padding: 10px 0;
+    /* background: tomato; */
+    position: relative;
+}
+
+.gnb li a b::after {
+    content: "";
+    /* posa+b0+l0+w100p+h3+bg */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* trftx: 저기에 50%라 적으면 자기 기준 절반에 위치하게 됨. */
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background: var(--main-color);
+    transition: all ease-out 0.4s;
+}
+
+.gnb li a:hover b::after {
+    width: 100%;
+}
+
+.btn-search {
+    /* btn: 인라인과 블럭의 특징을 다 갖고 있는 요소 */
+    width: 54px;
+    height: 54px;
+    border: 1px solid #000;
+    background: #fff url(../images/ico-search.png) no-repeat 50%; /* 축약 속성일 땐 값과 값 사이 공백을 잘 챙겨줘야함 */
+}
+
+.visual {
+    max-width: 1920px; /* maxw */
+    margin: 0 auto;
+    height: 584px;
+}
+
+.visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover: 영역 채우기, contain: 영역에 포함되기 */
+    object-position: 50% 45%; /* obp */
+}
+
+.sec-title {
+    /* fw700+fz34+c */
+    font-weight: 700;
+    font-size: 34px;
+    color: var(--title-color);
+    text-align: center; /* tac */
+}
+
+/* 참고! 한 번에 정리하고 싶으면 이런 방식도 가능하다~ */
+/* main > section {
+    padding: 100px 0;
+} */
+
+.research {
+    /* p80-0-66 */
+    padding: 80px 0 66px;
+    background: var(--gray-light);
+}
+
+.research-list {
+    /* background: green; */
+    margin-top: 61px;
+
+    display: flex;
+    /* flex-wrap: nowrap;: 자식요소를 감싸지 말라는 의미 */
+    flex-wrap: wrap; /* fxww: 자식요소를 부모요소가 감싸라(=줄바꿈) */
+    gap: 20px;
+}
+
+.research-list li {
+    /* border: 1px solid #000; */
+    width: 380px;
+    height: 200px;
+    /* flex-shrink: 0; fxsh0: 줄어들지 말라는 의미: fxww로 대체 가능 */
+    background: #fff;
+    padding: 36px 18px 36px 38px; /* 상, 우, 하, 좌: 그냥 위에서부터 시계방향으로 돌아가는 네모박스 생각하세용 */
+
+    /* 라인들(4개)의 기준점 */
+    position: relative;
+}
+
+.research-list li a {
+    display: flex;
+    gap: 29px;
+}
+.research-list li a::before {
+    content: ""; /* ct(필수) */
+    display: block; /* db */
+    width: 71px;
+    height: 60px;
+    background: no-repeat 50%;
+    flex-shrink: 0; /* fxsh0: 줄어들지 말라는 의미(item에게 주는 명령) */
+}
+
+.research-list li:nth-child(1) a::before {
+    background-image: url(../images/research-icon01.png); /* 이러면 li 가상요소의 배경 이미지로 들어간당 */
+}
+.research-list li:nth-child(2) a::before {
+    background-image: url(../images/research-icon02.png);
+}
+.research-list li:nth-child(3) a::before {
+    background-image: url(../images/research-icon03.png);
+}
+.research-list li:nth-child(4) a::before {
+    background-image: url(../images/research-icon04.png);
+}
+.research-list li:nth-child(5) a::before {
+    background-image: url(../images/research-icon05.png);
+}
+.research-list li:nth-child(6) a::before {
+    background-image: url(../images/research-icon06.png);
+}
+.research-list li:nth-child(7) a::before {
+    background-image: url(../images/research-icon07.png);
+}
+.research-list li:nth-child(8) a::before {
+    background-image: url(../images/research-icon08.png);
+}
+.research-list li:nth-child(9) a::before {
+    background-image: url(../images/research-icon09.png);
+}
+
+.research-list li dl dt {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--title-color);
+}
+
+.research-list li dl dd {
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+/* 라인 애니메이션 효과 */
+.research-list li::before {
+    content: "";
+    position: absolute;
+    /* t0+r0+w100p+h3+bg */
+    top: 0;
+    right: 0;
+    width: 0%; /* 요 가로 길이를 늘려서 선을 만드는거임~~ */
+    height: 4px;
+    background: var(--main-color);
+
+    transition: var(--basic-transition);
+}
+
+.research-list li::after {
+    content: "";
+    position: absolute;
+    /* t0+r0+w100p+h3+bg */
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--main-color);
+
+    transition: var(--basic-transition);
+}
+
+.research-list li:hover {
+    box-shadow: 5px 7px 14px rgba(0, 0, 0, 0.2); /* bxsh: 그림자 효과 (x, y, blur) */
+}
+
+/* ul, ol, li <-랑 같은 개념 */
+.research-list li:hover::before,
+.research-list li:hover::after {
+    width: 100%;
+}
+
+.research-list li dl::before,
+.research-list li dl::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 0%;
+    background: var(--main-color);
+    transition: var(--basic-transition);
+}
+
+.research-list li dl::before {
+    top: 0;
+    left: 0;
+}
+
+.research-list li dl::after {
+    bottom: 0;
+    right: 0;
+}
+
+.research-list li:hover dl::before,
+.research-list li:hover dl::after {
+    height: 100%;
+}
+
+.join {
+    min-height: 690px; /* mih690 */
+    /* background: url(../images/process-bg.jpg) no-repeat 0 0; */
+    background: url(https://product.cdn.cevaws.com/var/storage/images/media/adaptil-2017/images/www-ww/shutterstock_395310793-3-2/3547034-1-www-WW/shutterstock_395310793-3-2.jpg)
+        no-repeat 0 0 / cover; /* <-ob cover와 같은 동작을 함. /를 주는 건 규칙. */
+
+    background-attachment: fixed; /* bgaf. fixed는 보여지는 영역이 움직여도 이미지는 위치를 고정시킴. */
+
+    position: relative;
+    padding: 80px 0;
+}
+
+.join::after {
+    content: "";
+    position: absolute;
+    /* t0+l0+w100p+h100p+bg */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: var(--basic-transition);
+}
+
+.join:hover::after {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+.join .inner {
+    position: relative; /* relative는 (t, l, r, b)값을 주지 않으면 기존 위치에서 위로 띄울 수 있음. */
+    z-index: 1; /* position: static이 아닌 position값은 z-index를 줄 수 있다. */
+}
+
+.join .sec-title {
+    color: #fff;
+}
+
+.text-con {
+    /* background: #f00; */
+    width: 650px;
+    margin-top: 119px;
+    color: #fff;
+}
+
+.text-con h4 {
+    font-weight: bold; /* fwb */
+    font-size: 44px;
+}
+.text-con p {
+    font-size: 20px;
+    margin-top: 31px;
+}
+.text-con .more {
+    margin-top: 34px;
+    display: flex;
+    align-items: center; /* aid */
+    gap: 10px;
+
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.text-con .more:hover {
+    color: #fff;
+    text-decoration: underline; /* tdu: 밑줄 생기게 */
+}
+
+.text-con .more::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(../images/ico-more.png) no-repeat 50%;
+    margin-top: 6px;
+}
+
+#footer {
+    padding: 47px 0 59px; /* p77-0-89 */
+    background: var(--gray-dark);
+    color: rgba(--white50);
+}
+
+.foot-menu {
+    display: flex;
+    padding: 31px 0;
+    margin-left: -16px; /* ml-16: 왼쪽으로 -16만큼 띄우겠다는 의미(이동같은 개념) */
+}
+
+.foot-menu li a {
+    display: block;
+    padding: 0 16px;
+    /* border: 1px solid #f00; */
+    font-weight: 700;
+    font-size: 14px;
+
+    position: relative;
+}
+
+.foot-menu li a:hover {
+    text-decoration: underline; /* tdu: 밑줄 생기게 */
+    color: #fff;
+}
+
+.foot-menu li a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10px;
+    background: var(--white10);
+}
+
+.foot-menu li:last-child a::after {
+    display: none; /* dn: 선이 아니라 면...?이라 이걸로 한 건가? 몰?루 */
+}
+
+.foot-con {
+    border-top: 1px solid var(--white10); /* bdt */
+    padding: 31px 0;
+    /* margin-top: 31px; */
+
+    display: flex;
+    justify-content: space-between; /* jcsb: 컨텐츠들 가로로 나열, 좌우로 각각 배치 */
+    align-items: center;
+}
+
+/* 첫번째를 제외하고 나머지 p들을 잡기 위한 방법 */
+.foot-con p + p {
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.foot-logo {
+    width: 225px;
+    height: 50px;
+    background: url(../images/foot-logo.png) no-repeat 0 50%; /* x축 방향으로 0, y축 방향으로 50%에 사진이 위치하도록 */
+}

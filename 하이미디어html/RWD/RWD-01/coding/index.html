@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>반응형 웹 첫번째</title>
+
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <header>
+            <!-- .inner>nav>h1.logo+ul.gnb+.util-menu -->
+            <div class="inner">
+                <nav>
+                    <h1 class="logo">
+                        <a href="#"><i class="hidden">LOGO</i></a>
+                    </h1>
+
+                    <ul class="gnb">
+                        <!-- li*3>a{MENU$} -->
+                        <li><a href="#">MENU1</a></li>
+                        <li><a href="#">MENU2</a></li>
+                        <li><a href="#">MENU3</a></li>
+                    </ul>
+
+                    <div class="util-menu">
+                        <a href="#" class="btn-menu"><i class="hidden">menu</i></a>
+                        <a href="#" class="btn-login">sign in</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <hr />
+        <!-- 영역 구분선 -->
+
+        <main>
+            <!-- s: visual -->
+            <section class="visual">
+                <div class="visual-title">
+                    <h2>Our Mission</h2>
+                    <p>Lorem Ipsum is simply dummy text</p>
+                </div>
+            </section>
+            <!-- //e: visual -->
+
+            <!-- s: about -->
+            <section class="about">
+                <div class="inner">
+                    <h3 class="sec-title">About</h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown.
+                    </p>
+                </div>
+            </section>
+            <!-- //e: about -->
+
+            <!-- s: team -->
+            <section class="team">
+                <div class="inner">
+                    <h3 class="sec-title">Team</h3>
+                    <!-- ul.team-list>li*3>(figure>img)+dl>dt+dd -->
+                    <ul class="team-list">
+                        <li>
+                            <figure><img src="./img/team-pic1.png" alt="John Doe" /></figure>
+                            <dl>
+                                <dt>John Doe</dt>
+                                <dd>Founder & CEO</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <figure>
+                                <img
+                                    src="https://i.namu.wiki/i/HjQ7HoKBQa4SfS_Kju0KrL280SdwmZOGNDd1pfdDwToLcLjwawFnQthT9S_aFzGZnggL83qY5UG9ickpD4YejA.webp"
+                                    alt="John Doe"
+                                />
+                            </figure>
+                            <dl>
+                                <dt>John Doe</dt>
+                                <dd>Co- Founder</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <figure><img src="./img/team-pic3.png" alt="John Doe" /></figure>
+                            <dl>
+                                <dt>John Doe</dt>
+                                <dd>Investor</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <a href="#" class="work-with">work with us</a>
+                </div>
+            </section>
+            <!-- //e: team -->
+
+            <!-- s: map -->
+            <section class="map">
+                <h4 class="hidden">map</h4>
+                <!-- 가로, 세로, 스타일은 삭제 후 css로 제어 -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.5679426106864!2d126.98639860111919!3d37.572217680919444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca358d397376d%3A0x655d2f997228fdf1!2z7ZWY7J2066-465SU7Ja0IOy7tO2TqO2EsO2VmeybkA!5e0!3m2!1sko!2skr!4v1725937459664!5m2!1sko!2skr"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </section>
+            <!-- //e: map -->
+        </main>
+        <hr />
+
+        <footer>
+            <!-- .inner>p.copyright+ul.sns-list>li*3>a>i.hidden -->
+            <div class="inner">
+                <p class="copyright">&copy; Company.LLC 2019</p>
+                <ul class="sns-list">
+                    <li>
+                        <a href="#"><i class="hidden">E-mail</i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="hidden">facebook</i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="hidden">twitter</i></a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

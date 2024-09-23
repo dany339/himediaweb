@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RWD1</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .wrap {
+                /* w1200+m0-a+bg#f55 */
+                width: 1200px;
+
+                margin: 0 auto;
+                background: #ff5;
+                height: 700px;
+            }
+
+            @media (max-width: 1200px) {
+                .wrap {
+                    width: 90%;
+                    background: #5f5;
+                }
+            }
+
+            .container {
+                /* w700+h500+bg#f55 */
+                width: 700px;
+                width: 58.3333%;
+                height: 500px;
+                background: #f55;
+            }
+
+            .box {
+                /* w200+h200+bg#55f */
+                width: 200px;
+                width: 28.5714%;
+
+                height: 200px;
+                background: #55f;
+
+                margin-left: 50px;
+                margin-left: 7.1429%;
+
+                color: #fff;
+                padding: 30px;
+                padding: 4.2857%;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- .wrap>.container>.box -->
+        <div class="wrap">
+            <div class="container">
+                <div class="box">BOX</div>
+            </div>
+        </div>
+    </body>
+</html>

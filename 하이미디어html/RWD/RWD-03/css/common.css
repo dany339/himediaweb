@@ -1,0 +1,75 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+    --main-color: #504b4b;
+    --main-color-dark: #292424;
+    --sub-color: #e9e2d4;
+    --dark-color: #2c2c2c;
+    --title-color: #000;
+    --text-color: #555;
+    --white50: rgba(255, 255, 255, 0.5);
+    --black50: rgba(0, 0, 0, 0.5);
+}
+
+hr,
+.hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+body {
+    font: 2rem/1.5 "Montserrat", sans-serif;
+    text-transform: capitalize; /* ttc: 첫 글자는 무조건 대문자로 */
+    color: var(--text-color);
+    word-break: keep-all; /* wbka */
+    overflow-x: hidden; /* ovxh: x축 넘어가면 숨겨라 */
+    min-width: 32rem; /* 반응형 할 때 쓰임 */
+}
+
+::selection {
+    background: var(--main-color);
+    color: var(--sub-color);
+}
+
+.btn-basic {
+    display: inline-block;
+    padding: 1.3rem 3.2rem;
+    border: 1px solid var(--white50);
+    border-radius: 5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.sec-title {
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--title-color);
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+::placeholder {
+    text-transform: capitalize;
+}

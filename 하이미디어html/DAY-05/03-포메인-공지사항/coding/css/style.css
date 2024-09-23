@@ -1,0 +1,210 @@
+@charset 'utf-8';
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* Design Reset */
+
+* {
+    /* m0+p0+bxbb */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none; /* lisn */
+}
+
+img {
+    vertical-align: top; /* vat */
+    max-width: 100%; /* maxw: 아무리 커져도 니 크기까지만 커져라 */
+}
+
+body {
+    font: 16px/1.6 Pretendard, sans-serif;
+    word-break: keep-all; /* wbka: 어절 단위 줄바꿈 */
+    color: #666;
+}
+
+a {
+    text-decoration: none; /* tdn */
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #738924;
+}
+
+.board {
+    /* w1079+m0-a+bg#ff5 */
+    width: 1079px;
+    margin: 0 auto;
+    /* background: #ff5; */
+}
+
+.board h1 {
+    display: none; /* dn */
+}
+
+.board-list {
+    /* background: #5f5; */
+
+    display: flex; /* df */
+    flex-wrap: wrap; /* fxww: 줄바꿈 */
+    gap: 50px 29px; /* g50(밑)-29(좌우) */
+}
+
+.board-list li {
+    /* border: 1px solid #000; bd */
+    width: 340px;
+    height: 420px;
+    background: #fff;
+    position: relative; /* posr: 직계 자손, 절대배치 기준점 */
+}
+
+.news-item em {
+    /* w47+h47+bg#f00 */
+    width: 47px;
+    height: 47px;
+    background: url(../images/ico-not.png) no-repeat 0 0; /* nop */
+    /* display: block; */
+
+    /* posa+t0+l0 */
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1;
+
+    /* 텍스트 날리기 */
+    /* color: transparent; */
+    text-indent: -999px; /* ti-999 */
+    overflow: hidden; /* oh: 클리핑 */
+}
+
+.news-item .category {
+    /* li에 기준점이 잡혀있기 때문에 추가로 기준점을 잡지 않음 */
+
+    /* posa+t20+r20+bd+p20+c#fff+fz */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+
+    border: 1px solid #fff;
+    padding: 7px 21px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.news-pic {
+    height: 240px;
+    /* background: red; */
+    position: relative; /* posr: 직졔 자손인 .news-pic::after의 기준점 */
+
+    overflow: hidden; /* 넘어가는 이미지 숨기기 */
+    transition: 0.4s;
+}
+
+.news-pic img {
+    /* w100p+h100p */
+    width: 100%;
+    height: 100%;
+
+    /* cover는 공간 다 채우면 끝, contain은 공간 안에 포함되면 끝 */
+
+    object-fit: cover; /* ob(매우 중요한 명령!! 특히 반응형 만들 떄~!! */
+    object-position: 50% 25%; /* obp */
+
+    transition: 0.4s;
+}
+
+.news-pic::after {
+    content: ""; /* ct */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* w100p */
+    height: 100%; /* h100p */
+    background: #000;
+    opacity: 0.6; /* op.6 */
+
+    transition: 0.4s;
+}
+
+/* 마우스 호버 효과 */
+.board-list li:hover .news-pic::after {
+    opacity: 0.1;
+}
+
+.board-list li:hover .news-pic img {
+    transform: scale(1.1);
+}
+
+.board-list li:hover .news-pic {
+    border-radius: 30px;
+}
+
+.news-con {
+    padding: 20px 0 7px; /* p20-0-7 */
+}
+
+.news-con h2 {
+    /* fw600+fz20+c#222+lh1.4 */
+    font-weight: 600;
+    font-size: 20px;
+    color: #222;
+    line-height: 1.4;
+}
+
+.news-con p {
+    margin-top: 10px;
+    color: #999;
+
+    /* background: yellow; */
+
+    /* 한 줄 말줄임 표시 */
+    /* width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+    display: -webkit-box;
+    /* -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 원하는 줄 수 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-con time {
+    /* fw500+fz12+c#676767 */
+    font-weight: 500;
+    font-size: 12px;
+    color: #676767;
+    position: absolute; /* posa */
+    bottom: 7px;
+    left: 0;
+}
+
+.more {
+    /* df+jcc+aic+w281+h48+bd */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* g5 */
+
+    width: 281px;
+    height: 48px;
+    border: 1px solid #c7c8c7;
+    color: #676767;
+
+    /* m65-a-0 */
+    margin: 65px auto 0;
+}
+
+.more::after {
+    content: "+";
+    color: #676767;
+}

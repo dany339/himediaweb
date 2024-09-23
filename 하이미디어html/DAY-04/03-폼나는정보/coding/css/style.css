@@ -1,0 +1,123 @@
+@charset 'utf-8';
+
+* {
+    /* m0+p0+bxbb */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none; /* lisn */
+}
+
+img {
+    vertical-align: top; /* vat */
+}
+
+body {
+    font: 16px/1.4 "맑은 고딕", "Malgun Gothic", sans-serif;
+    color: #666; /* c#666 */
+    letter-spacing: -1.5px; /* lts-1.5: 자간 조절 */
+    word-break: keep-all; /* wbka: 어절 단위 줄바꿈 */
+}
+
+a {
+    text-decoration: none; /* tdn */
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #434159;
+}
+
+.info {
+    /* w1180+m0-a+bg#ff5 */
+    width: 1180px;
+    margin: 50px auto;
+    /* background: #ff5; */
+
+    padding: 42px 0; /* p42-0 */
+}
+
+.info h1 {
+    /* background: red; */
+    text-align: center; /* tac: 블록요소는 감싸는 인라인 요소의 가운데 정렬 */
+    font-weight: normal; /* fwn: 두껍지 않은 글자로 저장됨 */
+    font-size: 40px;
+    color: #ea002c;
+}
+
+.into-list {
+    /* background: green; */
+    display: flex; /* df */
+    justify-content: space-between; /* jcsb: 남은 여백을 골고루 사이사이 */
+    margin-top: 36px; /* mt36 */
+}
+
+.into-list li {
+    /* border: 1px solid #000; */
+    /* w280+h185+bg#fff */
+    width: 280px;
+    height: 185px;
+    background: #fff;
+}
+
+.into-list li dl dt {
+    padding: 11px 20px 13px; /* p10-20-12 */
+    background: #434159;
+    color: #fff;
+
+    position: relative; /* posr: 직계 자손 절대배치의 기준점 */
+}
+
+.into-list li dl dt::after {
+    content: ""; /* ct <-이거 없으면 동작X */
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(../images/alpha_pointer.png) no-repeat 0 0; /* nop */
+
+    position: absolute; /* posa */
+    bottom: -15px;
+    left: 20px;
+}
+
+.into-list li dl dd {
+    padding: 21px 20px; /* p21-20 */
+}
+
+/* hover */
+
+.into-list li:hover dl dt {
+    background: #ea002c;
+}
+
+.into-list li:hover dl dt::after {
+    background-position: 0 -15px; /* bgp */
+}
+
+.test {
+    /* w40+h40+bg+m40-a */
+    width: 52px;
+    height: 48px;
+    background: url(../images/sp_main.3e7d337e.png) no-repeat -104px -386px;
+    margin: 50px auto;
+}
+
+.test2 {
+    width: 138px;
+    height: 135px;
+    background: url(../images/sp_main.3e7d337e.png) no-repeat 0 0;
+    margin: 50px auto;
+}
+
+.test3 {
+    width: 148px;
+    height: 32px;
+    background: url(../images/sp_main.3e7d337e.png) no-repeat -285px -318px;
+    margin: 50px auto;
+}

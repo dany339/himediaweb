@@ -1,0 +1,248 @@
+@charset 'utf-8';
+
+.visual {
+    max-width: 192rem; /* 아무리 커져도 1920만큼만 커지라는 의미 */
+    height: 64.6rem;
+    margin: 0 auto;
+    /* border: 10px solid #f00; */
+    position: relative;
+    overflow: hidden;
+
+    /* 애니메이션 적용 */
+    animation: revealAni 2s;
+}
+
+.visual iframe {
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover; */
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* 애니메이션 적용 */
+    animation: fadeScale 2s;
+}
+
+.visual-title {
+    position: absolute;
+    top: 50%;
+    left: 288px;
+    left: 15%;
+    transform: translateY(-50%); /* trfty */
+    /* background: red; */
+    z-index: 1; /* 얘도 이미 포지션 앱솔루트 했으니까 z-index값을 줘서 위로 뜨게 만듦 */
+}
+
+.visual-title h2 {
+    /* fw900+fz8r+c */
+    font-weight: 900;
+    font-size: 8rem;
+    color: #a0ffc8;
+    line-height: 1.1; /* lh1.1 */
+
+    /* 애니메이션 적용 */
+    animation: fadeText 1s 2.5s both;
+}
+.visual-title p {
+    /* fz4.8r+c#fff */
+    font-size: 4.8rem;
+    color: #fff;
+    margin-top: 1.2rem;
+
+    /* 애니메이션 적용 */
+    animation: fadeText 1s 2.8s both;
+}
+.visual-title p strong {
+    font-weight: 600;
+}
+
+.visual::after {
+    content: "";
+    position: absolute;
+    /* t0+l0+r0+b0: 상하좌우 0떨어진 지점을 다 채우라는 의미. */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000; /* rgba로 해서 배경에 오퍼시티를 주는 방법도 있음. */
+    opacity: 0.6; /* op.6 */
+
+    /* 마우스와 관계없는 요소로 만들기(ex: 클릭) */
+    pointer-events: none;
+    user-select: none;
+}
+
+.intro {
+    padding: 12rem 0 14rem;
+    text-align: center;
+}
+
+.intro-title h3 {
+    /* fw700+fz4.8r+c */
+    font-weight: 700;
+    font-size: 4.8rem;
+    color: var(--title-color);
+}
+
+.intro-title p {
+    /* fw500+fz2.4r+mt2.4r */
+    font-weight: 500;
+    font-size: 2.4rem;
+    width: 74rem;
+    margin: 0 auto;
+    margin-top: 2.4rem; /* mt이 m0-a보다 위에 위치해있으면, margin이 0이 되므로 위치를 잘 신경써줘야함. */
+}
+
+.intro-list {
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center; /* jcc */
+    gap: 10.8rem;
+    padding: 8rem 0;
+    margin-top: 9.7rem;
+}
+
+.intro-list li {
+    /* border: 1px solid #000; */
+    width: 30rem;
+    min-height: 26.2rem; /* mih26.2r */
+
+    display: flex;
+    flex-direction: column-reverse; /* fxdcr: 세로 방향으로 축을 만드는데, 축을 뒤집어서 요소가 아래로 감 */
+    flex-direction: column; /* fxdc: 축의 방향 바꾸기 */
+    align-items: center; /* aic: 교차축 방향으로의 아이템 정렬 */
+    gap: 2.4rem;
+    justify-content: center; /* jcc: 메인축 방향으로 아이템 정렬 */
+    padding: 1rem 3.5rem; /* p1r-4.5r: 이후 마이너스 붙은 거 빼주기 */
+}
+
+.intro-list li::before {
+    content: "";
+    display: block; /* db */
+    /* w10.6r+h10.6r+bdrs50p+bg */
+    width: 10.6rem;
+    height: 10.6rem;
+    border-radius: 50%; /* bdrs50p */
+    background: var(--main-color) no-repeat 50%;
+}
+
+.intro-list li:nth-child(1)::before {
+    background-image: url(../img/ico-intro1.svg);
+}
+
+.intro-list li:nth-child(2)::before {
+    background-image: url(../img/ico-intro2.svg);
+}
+
+.intro-list li:nth-child(3)::before {
+    background-image: url(../img/ico-intro3.svg);
+}
+
+.intro-list li dt {
+    /* fw700+fz3.2r+c */
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--main-color);
+}
+
+.intro-list li dd {
+    /* mt2.4r+f500+fz2r */
+    margin-top: 2.4rem;
+    font: 500px;
+    font-size: 2rem;
+}
+
+.link-list {
+    display: flex;
+    height: 39.5rem;
+}
+
+.link-list li {
+    /* border: 1px solid #000; */
+
+    flex-grow: 1; /* fxg1: 늘어날 수 있으면 늘어나라 */
+    flex-shrink: 1; /* fxsh1: 줄어들어라 */
+    flex-basis: auto; /* fxb: 기본 점유 공간 */
+
+    /* fx1(그로우)-1(쉬링크)-a(베이시스): 위에 있는 내용 축약 */
+    flex: 1 1 auto;
+
+    background: no-repeat 0 0 / cover;
+
+    padding: 8rem 10rem;
+
+    position: relative;
+}
+
+.link-list li:nth-child(1) {
+    background-image: url(https://pbs.twimg.com/media/Dii2PyVVAAAQZ9g.jpg); /* bgi */
+}
+
+.link-list li:nth-child(2) {
+    background: url(https://i.pinimg.com/564x/a2/04/ac/a204ac0eb7e1b860683a3d547f707d8a.jpg)
+        no-repeat 0 30% / cover; /* bgi */
+}
+
+.link-list li a {
+    display: flex;
+
+    height: 100%;
+    align-items: center;
+}
+
+.link-list li::before {
+    content: "";
+    position: absolute;
+    /* t0+l0+r0+b0: li의 영역을 전부 다 쓰라는 의미 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: var(--main-color);
+    opacity: 0.6; op.6 */
+    background: rgba(18, 86, 47, 0.6);
+
+    transition: 0.4s;
+}
+
+.link-list li:hover::before {
+    /* opacity: 0.8; */
+    background: rgba(18, 86, 47, 0.8);
+    /* bad: 오퍼시티 값을 준 요소는 적용X 그래서 rgba값으로 준 거 */
+    backdrop-filter: blur(5px);
+}
+
+.link-list li:hover .link-title {
+    transform: translateX(20px); /* trftx */
+}
+
+.link-title {
+    /* background: #55f; */
+    color: #fff;
+
+    /* flex의 item, transform은 posr을 주지 않고도 z-index를 줄 수 있음 */
+    z-index: 1;
+
+    transition: 0.4s;
+}
+
+.link-title h4 {
+    font-weight: 900;
+    font-size: 5rem;
+    line-height: 1; /* lh1 */
+}
+
+.link-title h4 b {
+    display: block;
+}
+
+.link-title p {
+    /* fw700+fz2r+mt2.1r */
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 2.1rem;
+}

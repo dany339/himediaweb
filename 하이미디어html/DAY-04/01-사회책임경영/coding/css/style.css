@@ -1,0 +1,143 @@
+@charset 'utf-8';
+
+/* 디자인 초기화 */
+/* *{m0+p0+bxbb} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none; /* lisn */
+}
+
+img {
+    vertical-align: top; /* vat */
+}
+
+body {
+    font: 14px/24px "맑은 고딕", "Malgun Gothic", sans-serif; /* f(폰트들 나열할 때는 ','가 들어가야함) */
+    letter-spacing: -1px; /* lts-1 */
+    color: #666; /* c#666 */
+
+    background: #f4f4f4; /* bd#f4f4f4 */
+
+    /* wbka: 어절 단위로 줄바꿈 */
+    word-break: keep-all;
+}
+
+a {
+    text-decoration: none; /* tdn */
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline; /* tdu(밑줄만들기) */
+    color: #004a8d;
+}
+
+.management {
+    /* w1200+m0-a+bg#ff5 */
+    width: 1200px;
+    margin: 0 auto;
+    /* background: #ff5; */
+    padding: 100px 0; /* p100-0(부모가 자식을 떨어트릴 땐 padding이 좋음 */
+}
+
+.management h1 {
+    display: none; /* dn */
+}
+
+.management-list {
+    /* background: green; bg */
+}
+.management-list {
+    display: flex; /* df */
+    gap: 16px; /* g16(gap지정) / jcsb(남은 공간 균등 배분) */
+
+    flex-wrap: nowrap; /* 기본값: 아이템들을 no wrap(감싸지 않는 것)해라 */
+    flex-wrap: wrap; /* fxww: 아이템들을 감싸라 */
+}
+
+.management-list li {
+    /* border: 1px solid #000; bd */
+
+    /* w288+h384+bg#fff */
+    width: 288px;
+    height: 384px;
+    background: #fff;
+
+    text-align: center; /* tac: 블록요소가 감싸는 인라인 요소를 가운데로 */
+
+    /* trs.4s: A상태와 B상태의 변화를 0.4초 동안 구현 */
+    transition: 0.4s;
+}
+
+.management-list li figure {
+    overflow: hidden; /* oh: 영역을 넘쳐나는 애들을 숨겨라 */
+}
+
+.management-list li figure img {
+    filter: grayscale(1);
+    transition: 0.4s; /* trs.4s */
+}
+
+.management-list li:hover figure img {
+    filter: grayscale(0);
+    transform: scale(1.3) rotate(-10deg); /* trf */
+}
+
+.management-list li dl {
+    /* p22-44-30 (탑, 좌우, 바텀) */
+    padding: 22px 44px 30px;
+}
+.management-list li dl dt {
+    /* fwb+fz20+c#004a8d */
+    font-weight: bold;
+    font-size: 20px;
+    color: #004a8d;
+}
+.management-list li dl dd {
+    margin-top: 10px;
+}
+
+.management-list li dl::after {
+    content: ""; /* ct */
+    /* w35+h35+bg */
+    width: 35px;
+    height: 35px;
+    background: url(../images/arr.jpg) no-repeat 50%;
+
+    display: block; /* db(블록화) */
+    margin: 20px auto 0; /* m20-a-0 */
+}
+
+.management-list li:hover {
+    /* trfty */
+    transform: translateY(-50px);
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    background: #004a8d;
+}
+
+.management-list li:hover dl::after {
+    background: url(../images/arr-on.jpg) no-repeat 50%;
+}
+
+.management-list li:hover * {
+    color: #fff;
+}
+
+/* 이런식으로도 할 수 있음 */
+
+/* .management-list li:hover dt {
+    color: #fff;
+}
+.management-list li:hover dd {
+    color: #fff;
+} */

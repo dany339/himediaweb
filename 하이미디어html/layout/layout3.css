@@ -1,0 +1,120 @@
+@charset 'utf-8';
+
+.inner {
+    /* w1340+m0-a+bg#ff5 */
+    width: 1340px;
+    margin: 0 auto;
+    background: #ff5;
+
+    height: 100%; /* h100p */
+}
+
+header {
+    /* h100+bg */
+    height: 100px;
+    background: red;
+}
+
+header nav {
+    display: flex; /* df */
+    justify-content: space-between; /* jcsb */
+    align-items: center; /* aic */
+    height: 100%; /* h100p */
+}
+
+.loge {
+    /* w190+h44+bd */
+    width: 190px;
+    height: 44px;
+    border: 1px solid #000;
+}
+
+.gnb {
+    display: flex;
+    align-self: flex-end; /* as: 너만 세로 기준 바닥으로(flex의 item에게 주는 명령) */
+}
+
+.gnb > li {
+    position: relative; /* posr: 직계 자손 절대배치의 기준점 */
+}
+
+.gnb > li > a {
+    display: block; /* a는 인라인 요소라 block화 해줘야 크기가 들어감 */
+    width: 170px;
+    border: 1px solid #000;
+    padding: 12px 0; /* p12-0 */
+    text-align: center;
+
+    /* 클릭할 수 있는 공간을 많이 주는 것이 좋음(최소 44px) */
+}
+
+.gnb_bg {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background: pink;
+    z-index: 9;
+}
+
+.submenu {
+    /* display: none; dn */
+    background: blue;
+    position: absolute; /* posa */
+    top: 51px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px;
+    text-align: center;
+}
+
+.visual {
+    height: 350px;
+    background: skyblue;
+    position: relative; /* posr */
+}
+
+.link {
+    height: 80px;
+    /* background: orange; */
+
+    /* 위로 올려서 겹쳐놓기 위한 방법 */
+
+    /* position: absolute;
+    top: 370px;
+    left: 0;
+    width: 100%; */
+
+    /* transform: translateY(-100%); trfty: 단점-자기만 올라감 */
+
+    margin-top: -80px; /* mt으로 자기 크기인 80만큼 올림 */
+    position: relative; /* posr: 얘는 위치의 변경없이 z-index를 줄 수 있음 */
+    z-index: 10;
+}
+
+.link .inner {
+    background: #fff;
+    border-radius: 20px 20px 0 0; /* bdrs */
+}
+
+.banner {
+    height: 200px;
+    background: tomato;
+}
+
+.board {
+    min-height: 350px; /* mih350 */
+    background: green;
+}
+
+footer {
+    /* h100+bg+c#fff */
+    height: 100px;
+    background: black;
+}

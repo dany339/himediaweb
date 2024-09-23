@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>table tag</title>
+    </head>
+    <!-- 셀의 구체적인 구분 방법(엑셀의 B3같은 개념): id/headers -->
+    <body>
+        <table border="1">
+            <caption>
+                최강 음원 다운로드 (단위:백만)
+            </caption>
+
+            <!-- 세로 열의 그룹핑 요소 -->
+            <!-- colgroup>col*3 -->
+            <colgroup>
+                <col span="2" class="song" />
+                <col />
+            </colgroup>
+
+            <!-- thead: 제목 / tbody: 본문 / tfoot: 합계, 소개 -->
+            <!-- tr>th*3> -->
+            <thead>
+                <tr>
+                    <!-- col: 목록 세로방향 / row: 목록 가로방향 -->
+                    <th scope="col">곡명</th>
+                    <th scope="col">가수</th>
+                    <th scope="col">다운로드</th>
+                </tr>
+            </thead>
+            <!-- tr*5>td*3 -->
+            <tbody>
+                <tr>
+                    <td>나와 같다면</td>
+                    <td>김연우</td>
+                    <td>5,896</td>
+                </tr>
+                <tr>
+                    <td>여러분</td>
+                    <!-- rowspan: 2개의 셀(세로)을 합친다 -->
+                    <td rowspan="2">임재범</td>
+                    <td>7,895</td>
+                </tr>
+                <tr>
+                    <td>편지</td>
+                    <!-- <td>BMK</td> -->
+                    <td>5,032</td>
+                </tr>
+                <tr>
+                    <td>늪</td>
+                    <td>김범수</td>
+                    <td>5,398</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <!-- colspan: 2개의 셀(가로)을 합친다 -->
+                    <td colspan="2">다운로드 합계</td>
+                    <td>25,221</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

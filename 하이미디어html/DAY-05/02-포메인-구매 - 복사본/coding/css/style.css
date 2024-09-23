@@ -1,0 +1,166 @@
+@charset 'utf-8';
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+* {
+    /* m0+p0+bxbb */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none; /* lisn */
+}
+
+img {
+    vertical-align: top; /* vat: 영역에 딱 맞춰서 배치함 */
+}
+
+body {
+    font: 16px/1.6 "Noto Sans KR", sans-serif; /* f */
+    color: #a4a4a4;
+}
+
+a {
+    text-decoration: none; /* tdn: 밑줄 없애기 */
+    color: inherit; /* 색상 강제 상속 */
+}
+
+a:hover {
+    text-decoration: none; /* tdn */
+    color: #546220;
+}
+
+.process {
+    /* w1080+m0-a+bg#ff5 */
+    width: 1080px;
+    margin: 0 auto;
+    /* background: #ff5; */
+
+    padding: 70px 0; /* p70-0: 0을 안 넣으면 모든 면에 70값의 여백이 생김 */
+}
+
+.process h1 {
+    /* fz34+c#546220 */
+    font-size: 34px;
+    color: #546220;
+    font-weight: 500; /* fw500 */
+    text-align: center; /* tac: 블록요소가 감싸고 있는 인라인을 가운데로 */
+}
+
+.process h1 strong {
+    font-weight: 400; /* fw400 */
+}
+
+.process-list {
+    /* bg#5f5 */
+    /* background: #5f5; */
+    margin-top: 77px; /* mt77 */
+
+    display: flex; /* df */
+    justify-content: space-between; /* jcsb: 남은 여백 균등히 부여 */
+}
+.process-list li {
+    transition: 0.2s; /* trs.4s */
+
+    border: 1px solid #d1d1d1; /* bd */
+    width: 240px;
+    height: 240px;
+
+    /* 부모 공간에 padding을 주는 방식으로 여백을 맞춰주는 게 좋음. */
+    padding: 28px;
+
+    position: relative; /* posr: 직계 자손 절대배치의 기준점 */
+
+    display: flex; /* df: 메인축의 기본 방향은 가로 */
+    flex-direction: column; /* fxdc: 메인축 방향을 세로(col)로 변경 */
+    align-items: center; /* aic: 교차축 방향의 콘텐츠 정렬 */
+    justify-content: center; /* jcc: 메인축 방향의 콘텐츠 정렬 */
+    gap: 12px;
+}
+
+.process-list li p {
+    min-height: 52px; /* mih52: 최소한 52px의 세로크기는 그리고 시작하라는 의미(세로 크기는 검사로 알아보기) */
+    text-align: center;
+}
+
+.process-list li::before {
+    content: ""; /* ct(필수) */
+    display: block; /* db */
+    width: 116px;
+    height: 116px;
+    background: no-repeat 50%; /* nop, bg는 공통명령 */
+}
+
+.process-list li:nth-child(1)::before {
+    /* 첫번째 자식인 li의 가상요소 before */
+    background-image: url(../images/mileag_procedure_01.png); /* bgi(개별명령): 백그라운드에 이미지를 불러오는 단축어 */
+}
+.process-list li:nth-child(2)::before {
+    /* 첫번째 자식인 li의 가상요소 before */
+    background-image: url(../images/mileag_procedure_02.png);
+}
+.process-list li:nth-child(3)::before {
+    /* 첫번째 자식인 li의 가상요소 before */
+    background-image: url(../images/mileag_procedure_03.png);
+}
+.process-list li:nth-child(4)::before {
+    /* 첫번째 자식인 li의 가상요소 before */
+    background-image: url(../images/mileag_procedure_04.png);
+}
+
+.process-list li::after {
+    content: ""; /* ct(필수) */
+    display: block; /* DB */
+    /* w44+h28+bg */
+    width: 44px;
+    height: 28px;
+    background: url(../images/ico_arrow_03.png) no-repeat 0 0;
+
+    position: absolute; /* posa */
+    /* t50p+r0: 상단 50%, 오른쪽 딱 붙게 */
+    top: 50%;
+    right: -29px;
+
+    /* trfty: y축(세로)으로 자신의 세로크기의 절반만큼 이동 */
+    transform: translateY(-50%);
+
+    /* 트랜지션을 미리 준비하면 hover/out 동시에 부드럽게 적요 */
+    transition: 0.4s; /* trs.4s */
+}
+
+/* 막내자식 li의 가짜 자식 after */
+.process-list li:last-child::after {
+    display: none; /* dn */
+}
+
+.apply {
+    /* w247+h70+bg#333+fz18+c#fff */
+    width: 247px;
+    height: 70px;
+    background: #333;
+    font-size: 18px;
+    color: #fff;
+
+    display: flex; /* df: 블럭화 */
+    justify-content: center; /* jcc: 메인축 방향 정렬 */
+    align-items: center; /* aic: 교차축 방향 정렬 */
+
+    margin: 50px auto;
+}
+
+.apply:hover {
+    background: #000;
+    color: #fff;
+}
+
+.process-list li:hover::after {
+    right: -43px;
+}
+
+.process-list li:hover {
+    transform: translateY(-20px);
+}
